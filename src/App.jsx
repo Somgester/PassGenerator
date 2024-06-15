@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -9,7 +7,13 @@ function App() {
   return (
     <>
       <div className='pass'>
-        hello
+        {/* password text and copy */}
+        <div className="header">
+          <div className="title">
+            hbsfjir&#^%
+          </div>
+          <button className='copyBtn' onClick={{}}></button>
+        </div>
       </div>
       
     </>

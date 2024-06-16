@@ -3,11 +3,31 @@
 }
 
 .pass {
-    background-color: cyan;
+    background-color: rgb(red, green, blue);
     padding: 24px;
 }
 
 .header{
     color: thistle;
     display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 700px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: thistle;
+    color: tomato;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.copyBtn{
+    background-color: thistle;
+    color: tomato;
+    height: 30px;
+    font-size: 10px;
 }

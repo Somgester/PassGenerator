@@ -12,7 +12,14 @@ function App() {
           <div className="title">
             hbsfjir&#^%
           </div>
-          <button className='copyBtn' onClick={{}}></button>
+          <button className='copyBtn' onClick={{}}>copy</button>
+        </div>
+        {/* password length */}
+        <div className="length">
+          <span>
+            <label>Character Length</label>
+            <label>5</label>
+          </span>
         </div>
       </div>
       

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import usePassGen from './hooks/usePassGen';
+import passwordStrength from './components/strength';
+
 
 function App() {
   const [length, setLength] = useState(6);
@@ -42,6 +44,7 @@ function App() {
             <button className='copyBtn' onClick={copyHandler}>
               {copied ? "copied" : "copy"}
               </button>
+              
           </div>
         )}
         {/* password length */}
@@ -66,7 +69,10 @@ function App() {
             )
           })}
         </div>
-        {/* Strength */}
+
+        {/* password strength */}
+        {password && passwordStrength(password)}
+
         {/* Error Handling */}
         {errorMessage && <div className="error">{errorMessage}</div>}
         {/* generate button */}

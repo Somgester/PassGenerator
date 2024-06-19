@@ -2,7 +2,12 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const checkBoxData = [
+    { title: "Uppercase", state: false },
+    { title: "Lowercase", state: false },
+    { title: "Numbers", state: false },
+    { title: "Symbols", state: false },
+  ];
 
   return (
     <>
@@ -20,7 +25,28 @@ function App() {
             <label>Character Length</label>
             <label>5</label>
           </span>
+          <input type="range" min="4" max="20" 
+          // value={}
+          // onChange={{}} 
+          />
         </div>
+        {/* Checkboxes */}
+
+        <div className="checkboxes">
+          {checkBoxData.map((checkbox, index) => {
+            return (
+              <div key={index}>
+                <input type="checkbox" checked={checkbox.state}
+                onChange={{}} />
+                <label>{checkbox.title}</label>
+              </div>
+            )
+          })}
+        </div>
+          {/* Strength */}
+
+          {/* generate button */}
+          <button className='generateBtn' onClick={() => {}}>Generate Password</button>
       </div>
       
     </>

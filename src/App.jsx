@@ -2,12 +2,20 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const checkBoxData = [
-    { title: "Uppercase", state: false },
-    { title: "Lowercase", state: false },
-    { title: "Numbers", state: false },
-    { title: "Symbols", state: false },
-  ];
+  const [length, setLength] = useState(4);
+  const [checkBoxData, setCheckBoxData] = useState( [
+      { title: "Uppercase", state: false },
+      { title: "Lowercase", state: false },
+      { title: "Numbers", state: false },
+      { title: "Symbols", state: false },
+    ]
+  );
+
+  const checkboxHandler = (i) => {
+    const updatedCheckBoxData = [...checkBoxData];
+    updatedCheckBoxData[i].state = !updatedCheckBoxData[i].state;
+    setCheckBoxData(updatedCheckBoxData);
+  }
 
   return (
     <>
@@ -23,11 +31,11 @@ function App() {
         <div className="length">
           <span>
             <label>Character Length</label>
-            <label>5</label>
+            <label>{length}</label>
           </span>
           <input type="range" min="4" max="20" 
-          // value={}
-          // onChange={{}} 
+          value={length}
+          onChange={(e) => setLength(e.target.value)} 
           />
         </div>
         {/* Checkboxes */}
@@ -37,7 +45,7 @@ function App() {
             return (
               <div key={index}>
                 <input type="checkbox" checked={checkbox.state}
-                onChange={{}} />
+                onChange={() => checkboxHandler(index)} />
                 <label>{checkbox.title}</label>
               </div>
             )

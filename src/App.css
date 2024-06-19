@@ -72,3 +72,9 @@ button {
     gap: 5px;
     padding-bottom: 25px;
 }
+
+.generateBtn {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+}
